@@ -1,0 +1,714 @@
+@import "_resets.scss"
+@import "_normalizes.scss"
+@font-face 
+    font-family: "Inika"
+    src: url('../assets/fonts/Inika-Regular.ttf')
+    font-weight: 400
+@font-face 
+    font-family: "Inika"
+    src: url('../assets/fonts/Inika-Bold.ttf')
+    font-weight: 700
+@font-face 
+    font-family: "Inter"
+    src: url('../assets/fonts/Inter-Regular.ttf')
+    font-weight: 400
+@font-face 
+    font-family: "Inter"
+    src: url('../assets/fonts/Inter-Bold.ttf')
+    font-weight: 700
+$color-back: #EDF2EC
+$color-green: #499A18
+$color-orange: #E06733
+*
+    box-sizing: border-box
+.body-page
+    font-family: "Inter"
+    font-weight: 400
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+.container
+    max-width: 1262px
+    margin: 0 auto
+    padding: 0 20px
+.header
+    background-color: $color-back
+    font-family: "Inika"
+    font-weight: 400
+    font-size: 16px
+.header-container
+    min-height: 134px
+    margin-bottom: 62px
+    display: flex
+    justify-content: space-between
+    align-items: center
+.header-logo
+    height: 21px
+    position: relative
+    display: flex
+    &__logo-title
+        line-height: 21px
+        text-align: left
+    &__logo-img
+        height: 21px
+        width: 21px
+        position: relative
+        top: -4px
+        left: 0px
+        margin-right: 1.5px
+.nav-menu
+    &__list
+        display: flex
+    &__items
+        margin-right: 46px
+        &:last-child
+            margin-right: 0px
+    &__a
+        text-decoration: none
+        color: #010201
+        line-height: 50px
+        &:hover
+            color: $color-orange
+            font-weight: 700
+            transition: all 0.4s ease-in-out
+.burger-menu-button
+    display: none
+    width: 40px
+    height: 26px
+    border: none
+    background-color: transparent
+    position: relative
+    margin-bottom: 5px
+    &__span
+        width: 40px
+        height: 2px
+        background-color: #717171
+        position: absolute
+        top: 0px
+        left: 0px
+        transition: transform .4s, opacity .4s
+    &__span:nth-child(1)
+        transform: translateY(8px)
+    &__span:nth-child(2)
+        transform: translateY(16px)
+    &__span:nth-child(3)
+        transform: translateY(24px)
+.welcome
+    background-color: $color-back
+.welcome-section-container
+    min-height: 470px
+    display: flex
+    justify-content: space-between
+.welcome-section-img
+    width: 448.8px
+    height: 407.36px
+.welcome-section-text
+    width: 549px
+    min-height: 407.36px
+    padding-top: 38px
+    margin-right: 15px
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    justify-content: flex-start
+    &__title
+        margin: 0
+        margin-bottom: 42px
+    &__text
+        margin-bottom: 48px
+        font-size: 20px
+        color: #636060
+        line-height: 35px
+    &__button
+        margin-bottom: 15px
+.title-inter
+    font-size: 45px
+    font-weight: 700
+    color: #717171
+    line-height: 50px
+    span
+        color: $color-green
+        font-weight: 700
+    &_black
+        font-size: 40px
+        color: black
+.button
+    width: 158px
+    height: 44px
+    border-radius: 10px
+    border: 2px solid $color-orange
+    background-color: rgba(237, 242, 236, 0)
+    font-size: 16px
+    color: #000000
+    &:hover
+        background-color: $color-orange
+        color: #FFFFFF
+        transition: all 0.4s ease-in-out
+.about-section-container
+    min-height: 666px
+    display: flex
+    align-items: center
+    justify-content: space-between
+.about-section-img
+    width: 464px
+    height: 479px
+.about-section-text
+    &__title
+        width: 463px
+        margin-bottom: 40px
+    &__text
+        width: 605px
+        color: #636060
+        font-size: 20px
+        line-height: 30px
+.title-inika
+    font-family: "Inika"
+    font-weight: 400
+    font-size: 40px
+    line-height: 52px
+    color: $color-green
+    span
+        color: $color-orange
+    &_bold
+        font-weight: 700
+.service
+    background-color: $color-back
+.service-section-container
+    padding-top: 40px
+    padding-bottom: 121px
+    min-height: 1300px
+.service-section-header
+    max-width: 1007px
+    margin-bottom: 80px
+    display: flex
+    justify-content: space-between
+.service-section-buttons
+    padding-top: 29px
+    width: 559px
+    display: flex
+    justify-content: space-between
+.button-orng
+    width: 161px
+    height: 50px
+    border-radius: 5px
+    border: 1px solid $color-orange
+    background-color: rgba(237, 242, 236, 0)
+    color: $color-orange
+    font-family: "Inika"
+    font-size: 20px
+    font-weight: 400
+    &:hover
+        background-color: $color-orange
+        color: #FFFFFF
+        transition: all 0.4s ease-in-out
+    &_bold
+        font-weight: 700
+.button-orng-activ
+    background-color: $color-orange
+    color: #FFFFFF
+.service-section-img-wrapper
+    height: 955px
+    width: 100%
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: start
+.service-section-img-item
+    display: flex
+    flex-direction: column
+    &__img
+        width: 329px
+        height: 493px
+    &__img-wide
+        width: 334px
+        height: 350px
+    &__wrap-third
+        background-image: url("../assets/img/third.png")
+        background-position: center
+        background-repeat: no-repeat
+        background-size: cover
+        width: 329px
+        height: 350px
+        border-top-right-radius: 20px
+        border-top-left-radius: 20px
+    &__wrap
+        width: 329px
+        height: 350px
+        border-top-right-radius: 20px
+        border-top-left-radius: 20px
+        overflow: hidden
+        display: flex
+        align-items: center
+    &__sign
+        width: 330px
+        height: 100px
+        padding-top: 8px
+        margin-bottom: 55px
+        border-bottom-right-radius: 20px
+        border-bottom-left-radius: 20px
+        border: 1px solid #E3E1D5
+        text-align: center
+        &_six
+            width: 330px
+            height: 100px
+            padding-top: 8px
+            margin-bottom: 55px
+            border-bottom-right-radius: 20px
+            border-bottom-left-radius: 20px
+            border: 1px solid #E3E1D5
+            text-align: center
+    &__title
+        margin-bottom: 11px
+        font-weight: 700
+        font-size: 20px
+        color: $color-orange
+    &__text
+        font-size: 16px
+        color: #717171
+.on-blur
+    filter: blur(4px)
+.prices
+    padding-top: 40px
+    padding-bottom: 115px
+.prices-section-container
+    display: flex
+    justify-content: space-between
+.prices-section-left-wrapper
+    padding-right: 15px
+    &__title
+        margin-bottom: 60px
+.prices-menu
+    width: 332px
+    height: 282px
+    padding-top: 34px
+    padding-bottom: 34px
+    border-radius: 20px
+    border: 1px solid #E3E1D5
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+.prices-menu-rectangle
+    width: 250px
+    height: 50px
+    padding-left: 40px
+    padding-right: 40px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border-radius: 20px
+    background-color: $color-back
+    &__name
+        font-size: 20px
+        font-weight: 700
+.circle-btn
+    position: relative
+    height: 16px
+    width: 16px
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 100px
+    background-color: #D9D9D9
+    &_dark
+        background-color: #AEA1A1
+.circle-btn-left
+    position: absolute
+    background-color: #717171
+    top: 8px
+    left: 5.5px
+    width: 3px
+    height: 0.5px
+    display: block
+    transform: rotate(45.53deg)
+    float: right
+    border-radius: 10px
+    &_dark
+        background-color: #FFFFFF
+.circle-btn-right
+    position: absolute
+    background-color: #717171
+    top: 8px
+    left: 7.5px
+    width: 3px
+    height: 0.5px
+    display: block
+    transform: rotate(-45.53deg)
+    float: right
+    border-radius: 10px
+    &_dark
+        background-color: #FFFFFF
+.prices-section-right-wrapper
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    &__title
+        margin-bottom: 38px
+        text-align: right
+    &__button
+        margin-bottom: 39px
+    &__img
+        width: 154px
+        height: 177px
+.contacts
+    background-color: $color-back
+.contacts-section-container
+    min-height: 550px
+    padding-top: 55px
+    display: flex
+    &__img
+        width: 400px
+        height: 497px
+        margin-right: 113px
+.contacts-section-right-wrapper
+    width: 59%
+    display: flex
+    flex-direction: column
+    &__title
+        margin-top: 7px
+        margin-bottom: 36px
+.contacts-box
+    width: 450px
+    height: 50px
+    margin-left: 259px
+    padding-left: 20px
+    padding-right: 33px
+    background-color: #D6E7D2
+    display: flex
+    align-items: center
+    justify-content: space-between
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    &__city
+        color: #717171
+        font-size: 20px
+        line-height: 40px
+        letter-spacing: 2px
+@media (max-width: 1270px)
+    .contacts-box
+        margin-left: 100px
+.footer-container
+    height: 130px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &__git
+        width: 169px
+        margin-right: 13px
+        display: flex
+        justify-content: space-between
+        font-size: 20px
+    &__git-github
+        color: black
+        text-decoration: none
+    &__rss-link
+        color: black
+        text-decoration: none
+        font-size: 20px
+        line-height: 50px
+.social-list
+    width: 187px
+    display: flex
+    justify-content: space-between
+    &__link
+        width: 32px
+        height: 32px
+
+@media (max-width: 1099px)
+    .container
+        max-width: 708px
+    .header-container
+        min-height: 117px
+        margin-bottom: 40px
+    .welcome-section-container
+        min-height: 380px
+    .welcome-section-text
+        width: 346px
+        min-height: 280px
+        padding-top: 0px
+        order: 1
+        &__title
+            margin: 0
+            margin-bottom: 30px
+        &__text
+            margin-bottom: 36px
+            padding-left: 4px
+            font-size: 16px
+            line-height: 25px
+    .welcome-section-img
+        width: 280px
+        height: 254.15px
+        order: 2
+    .title-inter
+        font-size: 35px
+        &_black
+            font-size: 25px
+            line-height: 35px
+    .title-inika
+        font-size: 35px
+        line-height: 45.61px
+    .about-section-container
+        min-height: 783px
+        padding-top: 41px
+        flex-direction: column
+        justify-content: flex-start
+    .about-section-text
+        width: 100%
+        margin-bottom: 67px
+        display: flex
+        flex-direction: column
+        align-items: center
+        &__title
+            width: 423px
+            margin-bottom: 51px
+            text-align: center
+        &__text
+            width: 100%
+    .about-section-img
+        width: 250px
+        height: 258px
+    .service-section-container
+        padding-top: 60px
+        padding-bottom: 121px
+        min-height: 1780px
+    .service-section-header
+        max-width: 1007px
+        margin-bottom: 40px
+        flex-direction: column
+        justify-content: flex-start
+        &__title
+            margin-bottom: 14px
+    .service-section-img-item
+        &__img
+            width: 280px
+            height: 420px
+        &__wrap-third
+            width: 280px
+            height: 350px
+        &__wrap
+            width: 280px
+            height: 350px
+        &__sign
+            width: 280px
+            padding-left: 20px
+            padding-right: 20px
+            margin-bottom: 38px
+            &_six
+                width: 280px
+                height: 100px
+                padding-top: 8px
+                padding-left: 20px
+                padding-right: 20px
+                margin-bottom: 0px
+                border-bottom-right-radius: 20px
+                border-bottom-left-radius: 20px
+                border: 1px solid #E3E1D5
+                text-align: center
+    .prices
+        padding-bottom: 81px
+    .prices-section-left-wrapper
+        padding-right: 0px
+        &__title
+            padding-left: 15px
+            margin-bottom: 57px
+            font-size: 35px
+            line-height: 42.36px
+    .prices-section-right-wrapper
+        &__title
+            padding-top: 100px
+            margin-bottom: 28px
+    .contacts-section-container
+        min-height: 739px
+        padding-top: 37px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-between
+        &__img
+            order: 2
+            width: 200px
+            height: 248.49px
+            margin-right: 0
+            margin-left: 18px
+    .contacts-section-right-wrapper
+        order: 1
+        &__title
+            text-align: center
+            font-size: 40px
+            margin-bottom: 101px
+    .contacts-section-right-wrapper
+        width: 100%
+        align-items: center
+    .contacts-box
+        margin-left: 0
+    .footer-container
+        height: 181px
+        padding-top: 33px
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        align-items: center
+        &__git
+            width: 170px
+            margin-right: 0
+            margin-bottom: 5px
+        &__rss
+            margin-bottom: 11px
+
+@media (max-width: 629px)
+    $color-green: #499A18
+    .container
+        max-width: 370px
+    .header-container
+        min-height: 99px
+        margin-bottom: 23px
+    .burger-menu-button
+        display: block
+    .nav-menu
+        width: 163px
+        height: 396px
+        padding-top: 115px
+        background-color: #FFFFFF
+        border-bottom-left-radius: 20px
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        position: absolute
+        top: 0px
+        right: -163px
+        &__list
+            display: flex
+            flex-direction: column
+            justify-content: center
+        &__items
+            text-align: center
+            margin-right: 0px
+        &__a
+            display: block
+            text-decoration: none
+            color: $color-green
+            font-size: 17px
+            line-height: 50px
+    .welcome-section-container
+        min-height: 274px
+    .welcome-section-text
+        width: 100%
+        min-height: 267px
+        &__title
+            margin-bottom: 20px
+        &__text
+            margin-bottom: 26px
+            padding-left: 0px
+    .welcome-section-img
+        display: none
+    .title-inter
+        font-size: 25px
+        line-height: 35px
+        &_black
+            font-size: 25px
+            line-height: 30.26px
+            text-align: center
+    .title-inika
+        font-size: 25px
+        line-height: 32.57px
+    .button
+        width: 100px
+        height: 34.14px
+        border-radius: 10px
+        font-size: 10px
+    .about-section-container
+        min-height: 516px
+        padding-top: 30px
+    .about-section-text
+        margin-bottom: 0px
+        &__title
+            width: 100%
+            margin-bottom: 15px
+        &__text
+            font-size: 15px
+            line-height: 25px
+    .about-section-img
+        width: 150px
+        height: 155px
+    .service-section-container
+        padding-top: 30px
+        padding-bottom: 0px
+        min-height: 3150px
+    .button-orng
+        width: 121px
+        height: 35px
+        font-size: 15px
+    .service-section-buttons
+        padding-top: 25px
+        width: 252px
+        flex-wrap: wrap
+        &__item
+            margin-bottom: 9px
+    .service-section-img-wrapper
+        height: 2870px
+        flex-direction: column
+        justify-content: flex-start
+        align-items: center
+    .service-section-img-item
+        &__sign
+            margin-bottom: 34px
+    .prices
+        padding-top: 25px
+        padding-bottom: 0px
+    .prices-section-container
+        flex-direction: column
+        align-items: center
+        justify-content: flex-start
+    .prices-section-left-wrapper
+        &__title
+            padding-left: 0px
+            margin-bottom: 37px
+    .prices-menu
+        width: 224px
+        height: 235px
+        padding-top: 29px
+        padding-bottom: 29px
+    .prices-menu-rectangle
+        width: 180px
+        height: 50px
+        padding-left: 30px
+        &__name
+            font-size: 15px
+    .prices-section-right-wrapper
+        align-items: center
+        &__title
+            padding-top: 19px
+            margin-bottom: 20px
+            font-size: 20px
+            line-height: 35px
+        &__img
+            display: none
+    .contacts-section-container
+        min-height: 446px
+        padding-top: 26px
+        &__img
+            width: 100px
+            height: 124.25px
+            margin-left: 0px
+    .contacts-section-right-wrapper
+        &__title
+            margin-top: 0px
+            margin-bottom: 82px
+    .contacts-box
+        width: 90%
+        padding-right: 21px
+        &__city
+            letter-spacing: 0px
+    .footer-container
+        height: 146px
+        width: 100%
+        padding-top: 23px
+        padding-bottom: 7px
+        &__git
+            margin-bottom: 16px
+        &__rss
+            margin-bottom: 12px
+        &__rss-link
+            line-height: 24.2px
+@import "_tablet.sass"
+@import "_mobile.sass"
+
