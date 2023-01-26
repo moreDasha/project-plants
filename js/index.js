@@ -35,115 +35,59 @@ for (let smoothLink of smoothLinks) {
 
 /* Кнопки-service */
 
-const imgItem = document.querySelectorAll('.service-section-img-item');
-const gardenButton = document.getElementById("garden");
-const lawnButton = document.getElementById("lawn");
-const plantingButton = document.getElementById("planting");
+const activButton = document.querySelectorAll(".button-orng-activ");
+const imgItem = document.querySelectorAll(".service-section-img-item");
+const serviceButton = document.querySelectorAll(".service-section-buttons__item");
 
-
-gardenButton.addEventListener("click", function() {
+/* Блюрит неподходящие картинки, когда нет активных кнопок */
+const setBlurOne = (button) => {
     for (i = 0; i < imgItem.length; i++) {
-        if(lawnButton.classList.contains("button-orng-activ") && ! plantingButton.classList.contains("button-orng-activ")) {
-            if(imgItem[i].classList.contains("planting")) {
-                imgItem[i].classList.toggle("on-blur");
-            }
-        } else if(plantingButton.classList.contains("button-orng-activ") && ! lawnButton.classList.contains("button-orng-activ")) {
-            if(imgItem[i].classList.contains("lawn")) {
-                imgItem[i].classList.toggle("on-blur");
-            }
-        } else if(lawnButton.classList.contains("button-orng-activ") && plantingButton.classList.contains("button-orng-activ")) {
-            lawnButton.classList.remove("button-orng-activ");
-            plantingButton.classList.remove("button-orng-activ");
-            if (! imgItem[i].classList.contains("garden")) {
-                imgItem[i].classList.toggle("on-blur");
-            }
-        } else {
-            if (! imgItem[i].classList.contains("garden")) {
-                imgItem[i].classList.toggle("on-blur");
-            }
-        }
-    }
-    gardenButton.classList.toggle("button-orng-activ");
-});
-
-lawnButton.addEventListener("click", function() {
-    for (i = 0; i < imgItem.length; i++) {
-        if(gardenButton.classList.contains("button-orng-activ") && ! plantingButton.classList.contains("button-orng-activ")) {
-            if(imgItem[i].classList.contains("planting")) {
-                imgItem[i].classList.toggle("on-blur");
-            }
-        } else if(plantingButton.classList.contains("button-orng-activ") && ! gardenButton.classList.contains("button-orng-activ")) {
-            if(imgItem[i].classList.contains("garden")) {
-                imgItem[i].classList.toggle("on-blur");
-            }
-        } else if(gardenButton.classList.contains("button-orng-activ") && plantingButton.classList.contains("button-orng-activ")) {
-            gardenButton.classList.remove("button-orng-activ");
-            plantingButton.classList.remove("button-orng-activ");
-            if (! imgItem[i].classList.contains("lawn")) {
-                imgItem[i].classList.toggle("on-blur");
-            }
-        } else {
-            if (! imgItem[i].classList.contains("lawn")) {
-                imgItem[i].classList.toggle("on-blur");
-            }
-        }
-    }
-    lawnButton.classList.toggle("button-orng-activ");
-});
-
-plantingButton.addEventListener("click", function() {
-    for (i = 0; i < imgItem.length; i++) {
-        if(lawnButton.classList.contains("button-orng-activ") && ! gardenButton.classList.contains("button-orng-activ")) {
-            if(imgItem[i].classList.contains("garden")) {
-                imgItem[i].classList.toggle("on-blur");
-            }
-        } else if(gardenButton.classList.contains("button-orng-activ") && ! lawnButton.classList.contains("button-orng-activ")) {
-            if(imgItem[i].classList.contains("lawn")) {
-                imgItem[i].classList.toggle("on-blur");
-            }
-        } else if(gardenButton.classList.contains("button-orng-activ") && lawnButton.classList.contains("button-orng-activ")) {
-            lawnButton.classList.remove("button-orng-activ");
-            gardenButton.classList.remove("button-orng-activ");
-            if (! imgItem[i].classList.contains("planting")) {
-                imgItem[i].classList.toggle("on-blur");
-            }
-        } else {
-            if (! imgItem[i].classList.contains("planting")) {
-                imgItem[i].classList.toggle("on-blur");
-            }
-        }
-    }
-    plantingButton.classList.toggle("button-orng-activ");
-});
-
-
-
-/* gardenButton.addEventListener("click", function() {
-    for (i = 0; i < imgItem.length; i++) {
-        if (! imgItem[i].classList.contains("garden")) {
+        if(! imgItem[i].classList.contains(button.id)) {
             imgItem[i].classList.toggle("on-blur");
         }
     }
-    gardenButton.classList.toggle("button-orng-activ");
-});
-
-lawnButton.addEventListener("click", function() {
+}
+/* Разблюривает картинки, когда одна из кнопок уже активна */
+const setBlurTwo = (button) => {
     for (i = 0; i < imgItem.length; i++) {
-        if (! imgItem[i].classList.contains("lawn")) {
-            imgItem[i].classList.toggle("on-blur");
+        if (imgItem[i].classList.contains(button.id)) {
+            imgItem[i].classList.remove("on-blur");
         }
     }
-    lawnButton.classList.toggle("button-orng-activ");
-});
-
-plantingButton.addEventListener("click", function() {
+}
+/* Разблюривает все картинки, когда две кнопки уже активны */
+const setNoBlur = () => {
     for (i = 0; i < imgItem.length; i++) {
-        if (! imgItem[i].classList.contains("planting")) {
-            imgItem[i].classList.toggle("on-blur");
-        };
-    };
-    plantingButton.classList.toggle("button-orng-activ");
-}); */
+        imgItem[i].classList.remove("on-blur");
+    }
+}
+/* Убирает активность кнопок */
+const setNoActive = () => {
+    for (i = 0; i < activButton.length; i++) {
+        activButton[i].classList.remove("button-orng-activ");
+    }
+}
+/* Событие клик */
+serviceButton.forEach(function(e) {
+    e.addEventListener("click", function() {
+        if(activButton.length === 0) {
+            setBlurOne(e);
+            e.classList.toggle("button-orng-activ");
+        } else if(activButton.length === 1) {
+            setBlurTwo(e);
+            e.classList.toggle("button-orng-activ");
+        } else if(activButton.length === 2) {
+            setNoBlur();
+            setNoActive();
+            setBlurOne(e);
+            e.classList.toggle("button-orng-activ");
+        }
+    })
+})
+
+
+
+
 
 
 
